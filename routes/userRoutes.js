@@ -1,17 +1,12 @@
 const express = require("express");
 const router = express.Router();
+const {registerUser, loginUser, getCurrentUserInfo} = require("../controllers/userController");
 
-router.post("/register", (req, res) => {
-    res.json({message: "User registered"});
-});
+router.post("/register", registerUser);
 
-router.post("/login", (req, res) => {
-    res.json({message: "Login user"});
-});
+router.post("/login", loginUser);
 
-router.get("/current", (req, res) => {
-    res.json({message: "Current User info"});
-});
+router.get("/current", getCurrentUserInfo);
 
 
 module.exports = router;
